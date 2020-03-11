@@ -3,9 +3,29 @@ CREATE DATABASE Sip;
 
 USE Sip;
 
-CREATE TABLE profiles (
-    Id INT NULL AUTO_INCREMENT PRIMARY KEY,
-    user_name VARCHAR(255) NOT NULL,
-    location VARCHAR(255) NOT NULL,
-    drink VARCHAR(255) NOT NULL
+CREATE TABLE Profiles (
+    Id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    Username VARCHAR(255) NOT NULL,
+    Userlocation VARCHAR(255) NOT NULL,
+    Userpassword VARCHAR(255) NOT NULL,
+    Profileimages VARCHAR (255) NOT NULL
+);
+
+CREATE TABLE Reviews(
+    Id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    Namedrinks VARCHAR(255) NOT NULL,
+    Stores VARCHAR(255) NOT NULL,
+    Ratings INT (255) NOT NULL,
+    Comments VARCHAR(255) NOT NULL,
+    Reviewtimes VARCHAR(255)NOT NULL,
+    Drinkimages VARCHAR(255) NOT NULL
+    
+);
+
+CREATE TABLE Drinks(
+    Id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    Username VARCHAR(255) NOT NULL,
+    Drinkname VARCHAR (255) NOT NULL,
+    DrinkImage VARCHAR(255) NOT NULL,
+    Favoritedrink BOOLEAN NOT NULL
 );
