@@ -1,0 +1,15 @@
+.result {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    border-bottom: 1px lightgrey solid;
+    justify-content: center;
+}
+
+.drink {
+    height: 50px;
+    width: 50px
+}
+
+img {
+    margin-top: 10px;
+}

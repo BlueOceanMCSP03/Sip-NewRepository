@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #map{
+            height: 400px;
+            width: 100%
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    <div id="root"></div>
+    <script>
+        function initMap() {
+                let options = {
+                    zoom: 17,
+                    center: {lat: 30.2656, lng: -97.7502}
+                }
+                
+                // New map
+                let map = new google.maps.Map(document.getElementById('map'), options);
+
+                // let labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+                // Add marker
+                // let markers = new google.maps.Marker({
+                //     position:{lat: 30.2655, lng: 97.7491},
+                //     map: map
+                // })
+
+                function addMarker (coords) {
+                    let marker = new google.maps.Marker({
+                        position: coords,
+                        map: map,
+                        icon: 'http://maps.google.com/mapfiles/kml/shapes/coffee.png'
+                    })
+                }
+
+                // addMarker({lat: 30.2655, lng: -97.7491});
+
+                let locations = [
+                    {lat: 30.2655, lng: -97.7491},
+                    {lat: 30.2652, lng: -97.7474},
+                    {lat: 30.2661, lng: -97.7467},
+                    {lat: 30.2649, lng: -97.7464},
+                    {lat: 30.2665, lng: -97.7497},
+                    {lat: 30.2675, lng: -97.7491},
+                    {lat: 30.2661, lng: -97.7513}
+                ]
+                
+                locations.map(location => {
+                    addMarker(location)
+                });
+
+
+                // let markers = locations.map(function(location, i) {
+                //     return new google.maps.Marker({
+                //         position: location,
+                //         label: labels[ i % labels.length]
+                //     })
+                // })
+
+                // let markerCluster = new MarkerClusterer(map, markers,
+                //     {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'}
+                // )
+
+            }
+    </script>
+    <script src="./bundle.js"></script>
+
+    <script src="/maps/documentation/javascript/examples/markerclusterer/markerclustererplus@4.0.1.min.js">
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA33Bfw1LlGh2TKSc7WLvHc-abcVtKHUJU&callback=initMap"
+    async defer></script>
+    
+</body>
+</html>
