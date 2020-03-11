@@ -1,0 +1,25 @@
+.optionTextStyle {
+    font-family: Arial;
+    font-size: medium;
+  }
+  
+  body {
+    background-color: lightblue;
+  }
+  
+  @media button and (max-width: 600px) {
+  button {
+   color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    height: 5em;
+    width: 12em;
+  }
+  }
+  .button {
+  background-position-x: 0em;
+  background-position-y: 0;
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  height: 5em;
+  width: 12em;
+  }

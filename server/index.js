@@ -4,6 +4,8 @@ const app = express();
 const port = 3000;
 require('dotenv').config()
 
+
+
 app.use(express.static(path.join(process.cwd(), '/client/public')));
 
 // Sample route
