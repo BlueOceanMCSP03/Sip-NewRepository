@@ -6,28 +6,26 @@ USE Sip;
 CREATE TABLE Profiles (
     Id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     Username VARCHAR(255) NOT NULL,
-    Location VARCHAR(255) NOT NULL,
+    Userlocation VARCHAR(255) NOT NULL,
     Userpassword VARCHAR(255) NOT NULL,
     Profileimages VARCHAR (255) NOT NULL
 );
 
 CREATE TABLE Reviews(
-    Id INT NOT NULL PRIMARY KEY,
-    Namedrink VARCHAR(255) NOT NULL,
-    Store VARCHAR(255) NOT NULL,
-    Rating INT (255) NOT NULL,
+    Id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    Namedrinks VARCHAR(255) NOT NULL,
+    Stores VARCHAR(255) NOT NULL,
+    Ratings INT (255) NOT NULL,
     Comments VARCHAR(255) NOT NULL,
-    Time VARCHAR(255)NOT NULL,
-    Drinkimage VARCHAR(255) NOT NULL
+    Reviewtimes VARCHAR(255)NOT NULL,
+    Drinkimages VARCHAR(255) NOT NULL
     
 );
 
 CREATE TABLE Drinks(
-    Id INT NOT NULL PRIMARY KEY,
+    Id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     Username VARCHAR(255) NOT NULL,
     Drinkname VARCHAR (255) NOT NULL,
     DrinkImage VARCHAR(255) NOT NULL,
     Favoritedrink BOOLEAN NOT NULL
-
-
-)
+);
