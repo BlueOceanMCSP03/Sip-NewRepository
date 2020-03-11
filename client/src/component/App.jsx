@@ -1,7 +1,20 @@
 import React from 'react';
+import Navigation from './Navigation/Navigation';
+// import Navigation from '../Navigation/Navigation.jsx'
 
-const App = () => (
-    <h1> Hello World</h1>
-)
 
-export default App;
+export default class App extends React.Component {
+    constructor(props) {
+        super(props) 
+        this.state = {
+          
+        }
+    }
+  render() {
+      return (
+          <div>
+              <Navigation />
+          </div>
+      )
+  }
+}
