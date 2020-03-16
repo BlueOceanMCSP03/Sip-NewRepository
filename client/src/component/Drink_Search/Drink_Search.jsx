@@ -18,11 +18,6 @@ const Drink_Search = () => (
     <input type="checkbox"></input>
     <label className={style.optionTextStyle}>Latte</label>
     <br></br>
-    <div>
-            <button className={style.button}>Review</button>
-            <button className={style.button}>Profile</button>
-            <button className={style.button}>Nearby</button>
-        </div>
     </div>
 );
 
