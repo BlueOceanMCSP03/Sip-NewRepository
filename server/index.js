@@ -1,13 +1,15 @@
 const express = require('express');
-const path = require('path');
 const app = express();
-const port = 3000;
+const cors = require('cors');
+const path = require('path');
 const con = require('../database/index.js');
+const port = 3000;
 require('dotenv').config();
 
 
 app.use(express.static(path.join(process.cwd(), '/client/public')));
 
+app.use(cors());
 // Sample route
 app.get('/', (req, res) => {
     //res.send(path.join(process.cwd(), '/client/public'));
