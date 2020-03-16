@@ -1,0 +1,15 @@
+.base {
+    font-family: Arial;
+    font-weight: normal;
+    
+    
+}
+
+.userInput {
+    text-align: center;
+}
+
+.button {
+    justify-self: center;
+}
+

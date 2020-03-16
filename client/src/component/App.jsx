@@ -3,6 +3,8 @@ import axios from 'axios';
 import { BrowserRouter as Router } from "react-router-dom";
 import history from '../Routing/history';
 import Routes from '../Routing/Routes';
+import Login from './Login/Login';
+import style from './App.module.css';
 
 class App extends Component {
         constructor(props) {
@@ -14,6 +16,7 @@ class App extends Component {
                 }
                 this.onChange = this.onChange.bind(this);
                 this.loginUser = this.loginUser.bind(this);
+                this.handleClick = this.handleClick.bind(this);
         }
 
         loginUser() {
@@ -40,32 +43,21 @@ class App extends Component {
                         password: e.target.value,
                 })
         }
+        handleClick() {
+                this.setState({
+                        isAuth: true,
+                }, () => history.push('/Profile'));
+        }
 
         render() {
                 const { isAuth, user_name, password } = this.state;
                 return (
-                        <Router history={history}>
+                        <Router history={history} className={style.body}>
                                 {
                                         isAuth ?
                                                 <Routes isAuth={isAuth} />
                                                 :
-                                                <div>
-                                                        <form>
-                                                                <label>Enter your Username:</label>
-                                                                <input type='text'></input>
-                                                                <br></br>
-                                                                <span>
-                                                                        <label>Enter your Password:</label>
-                                                                        <input type='text'></input>
-                                                                </span>
-                                                        </form>
-                                                        <button onClick={() => {
-                                                                this.setState({
-                                                                        isAuth: true,
-                                                                });
-                                                                history.push('/Profile')}}>Login</button>
-                                                </div>
-
+                                                <Login handleClick={this.handleClick}/>
                                 }
                         </Router>
                 )
