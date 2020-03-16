@@ -1,3 +1,4 @@
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css');
 .button1 {
     color: black;
     background-color: whitesmoke;
@@ -81,20 +82,8 @@
      background-color: black;
      color:white;
  }
- .icon {   
-    content: '';
-	position: absolute;
-    border: 2px solid; 
-    color: green;
-	border-radius: 50%;
-	width: 10px;
-	height: 10px;   
-}
-.icon:after {
-    width: 23px;
-    height: 15px;
-    transform: translateX(-8px) translateY(15px);
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-}
+ .fa.menu_icon {   
+     font-size: 4rem!important;
+ }
+ 
 }
