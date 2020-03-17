@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 const path = require('path');
-const con = require('../database/index.js');
+const DB = require('../database/index.js');
 const port = 3000;
 require('dotenv').config();
 
@@ -19,6 +19,8 @@ app.get('/', (req, res) => {
 app.route('/login')
     .get((req, res) => {
         //login existing user
+        const {username, password} = req.query;
+        DB.query()
         res.send('Test2')
     })
     .post((req, res) => {

@@ -1,15 +1,57 @@
 .base {
     font-family: Arial;
     font-weight: normal;
-    
-    
+    padding: 15px; 
+    padding-right: 20px;
+    background: rgba(233,212,179,0.8);
+    background-size: 25%;
+    border-radius: 5px;
+    border-color: transparent;
+    /* opacity: 0.7; */
+    position: fixed;
+    top: 200px;
+    right: 105px;
 }
 
 .userInput {
     text-align: center;
+    /* padding-top: 100px; */
+    font-family: Arial sans-serif;
+    font-size: 20px;
+    color: #663300;
+    font-style: italic;
 }
 
 .button {
-    justify-self: center;
+    font-family: Arial sans-serif;
+    font-weight: normal;
+    background-color: rgb(192, 125, 77);
+    border-radius: 4px;
+    font-size: 13px;
+    border-color: transparent;
+    font-style: italic;
 }
 
+.buttonAlign {
+    text-align: center;
+}
+
+.hello {
+    font-family: Arial sans-serif;
+    font-size: 65px;
+    font-weight: lighter;
+    color: #663300;
+    position: fixed;
+    font-style: italic;
+}
+
+.image {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    right: 150px;
+    left: 0px;
+    bottom: 0px;
+    background-size: cover;
+    z-index: -1;
+}
