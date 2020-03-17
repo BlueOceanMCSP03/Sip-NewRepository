@@ -1,24 +1,32 @@
 import React from 'react';
 import style from './Login.module.css';
+import wallpaper from './Local_Images/Wallpaper.png';
 
 
 const Login = (props) => (
-    <div className={style.base}>
-        <h1>Hello,</h1>
+    <div>
+        <img src={wallpaper} className={style.image}></img>
+        <h1 className={style.hello}>Hello,</h1>
+        <div className={style.base} >
         <form className={style.userInput}>
             <span>
-            <label>Enter your Username:</label>
+            <label>Username:</label>
             <br></br>
             <input type='text'></input>
             </span>
             <br></br>
             <span>
-                <label>Enter your Password:</label>
+                <br></br>
+                <label>Password:</label>
                 <br></br>
                 <input type='text'></input>
             </span>
         </form>
+        <br></br>
+        <div className={style.buttonAlign}>
         <button className={style.button} onClick={props.handleClick}>Login</button>
+        </div> 
+        </div>  
     </div>
 );
 
