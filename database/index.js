@@ -16,7 +16,7 @@ connection.query('SELECT 1 + 1 AS solution', function (error, results, fields) {
     console.log('The solution is: ', results[0].solution);
 });
 
-connection.query('SELECT * FROM drinks', function (error, results, fields) {
+connection.query('SELECT * FROM drinks CROSS JOIN users', function (error, results, fields) {
     if (error) throw error;
     results.forEach((results) => {
         console.log(`${results.user_id} kinda likes the ${results.drink_name}`)
