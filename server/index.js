@@ -5,7 +5,6 @@ const port = 3000;
 const con = require('../database/index.js');
 require('dotenv').config();
 
-
 app.use(express.static(path.join(process.cwd(), '/client/public')));
 
 // Sample route
@@ -19,10 +18,12 @@ app.route('/login')
         //login existing user
         res.send('Test2')
     })
+
     .post((req, res) => {
         //Add new user
-
+        
     })
+
 
 app.post('/addDrinkReview', (req, res) => {
     //Add drink review to DB
