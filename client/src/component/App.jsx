@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from "react";
 import axios from 'axios';
-import { BrowserRouter as Router } from "react-router-dom";
+import { Router } from "react-router-dom";
 import history from '../Routing/history';
 import Routes from '../Routing/Routes';
 import Login from './Login/Login';

@@ -1,6 +1,7 @@
 import React from 'react';
 import style from './Drink_Search.module.css';
 import Bar from '../Navigation/Bar'
+import Map from './Map.jsx'
 
 const Drink_Search = () => (
 
@@ -21,6 +22,13 @@ const Drink_Search = () => (
         <label className={style.optionTextStyle}>Latte</label>
         <br></br>
         <Bar />
+        <Map
+            // google={this.props.google}
+            center={{lat: 30.2657, lng: -97.7497}}
+            height='400px'
+            zoom={19}
+            centerAroundCurrentLocation={false}
+        />
     </div>
 );
 
