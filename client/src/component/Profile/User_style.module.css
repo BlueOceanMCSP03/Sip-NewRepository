@@ -1,21 +1,23 @@
 .verticalMenu {
     width: 300px; /* Set a width if you like */
     float: none;
-    position: absolute;
-    top: 60%;
+    position: fixed;
+    top: 70%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); 
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   }
   
   .verticalMenu a {
     background-color: #eee; /* Grey background color */
     color: black; /* Black text color */
     display: block; /* Make the links appear below each other */
-    padding: 12px; /* Add some padding */
+    padding: 10px; /* Add some padding */
     text-decoration: none; /* Remove underline from links */ 
     text-align: center;
     font-family: Arial;
     font-weight: normal;
+    font-size: smaller;
 }
   
   .verticalMenu a:hover {
@@ -30,11 +32,95 @@
 
 
 #list {
-    background-color: #9A6231;
+    background: #9A6231;
+    opacity: none;
 }
 
 .userInfo {
     text-align: center;
-    font-family: Arial;
-    font-weight: normal;
+    font-family: Arial sans-serif;
+    font-weight: lighter;
+    font-size: smaller;
+}
+
+.profile {
+  /* position: fixed; */
+  width: 95%;
+  height: 210px; 
+}
+
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  height: 50%;
+  position: fixed;
+  left: 40px;
+}
+
+.title {
+  color: grey;
+  font-size: 14px;
+}
+
+button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+  border-style: outset;
+  background: linear-gradient(to bottom, #ffffff 0%, #d3d3d3 100%);
+
+}
+
+button:hover, a:hover {
+  opacity: 0.7;
+}
+
+.latte {
+  position: absolute;
+  left:5px;
+  top: 105px;
+  height: 25%;
+  width: 15%;
+  
+}
+
+.userName {
+  font-size: 22px;
+  font-weight: bold;
+  font-family: Arial;
+  color: black;
+}
+
+.border {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.drink {
+  font-family: Arial;
+  font-size: 14px;
+  color: black;
+}
+
+.mocha {
+  position: absolute;
+  left:5px;
+  top: 50px;
+  height: 25%;
+  width: 15%;
 }
