@@ -6,7 +6,6 @@ const DB = require('../database/index.js');
 const port = 3000;
 require('dotenv').config();
 
-
 app.use(express.static(path.join(process.cwd(), '/client/public')));
 
 app.use(cors());
@@ -23,10 +22,12 @@ app.route('/login')
         DB.query()
         res.send('Test2')
     })
+
     .post((req, res) => {
         //Add new user
-
+        
     })
+
 
 app.post('/addDrinkReview', (req, res) => {
     //Add drink review to DB
