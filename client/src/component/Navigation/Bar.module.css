@@ -30,57 +30,60 @@
 }
 
 .button1 {
+    height: 100%;
+    position: fixed;
     bottom: 0;
     right: 0;
-    color: black;
-    background-color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    /* size: 48 x 48dp; */
-    height: 8vh;
+    align-items: center;
+    justify-content: center;
     width: 33vw;
-    border-radius: 5%;
-    position: fixed;
+    height: 8vh;
+    color: #000;
+    background-color: #d2a679;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, .8);
+    border: #ad8760 2px solid;
 }
 .button2 {
-    bottom: 0;
-    left: 33%;
-    padding: 0;
-    color: black;
-    background-color:white;
-    font-family: Arial, Helvetica, sans-serif 12em;
-    /* size: 48 x 48dp; */
-    height: 10vh;
-    width: 34vw;
-    border-radius: 5%;
+    height: 100%;
     position: fixed;
+    bottom: 0;
+    left: 33.5%;
+    align-items: center;
+    justify-content: center;
+    width: 33vw;
+    height: 8vh;
+    color: #000;
+    background-color: #d2a679 ;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, .8);
+    border: #ad8760 2px solid;
 }
 .button3 {
+    height: 100%;
+    position: fixed;
     bottom: 0;
     left: 0;
-    color: black;
-    background-color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    /* size: 48 x 48dp; */
-    height: 8vh;
+    align-items: center;
+    justify-content: center;
     width: 33vw;
-    border-radius: 5%;
+    height: 8vh;
+    color: #000;
+    background-color:#d2a679;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, .8);
+    border: #ad8760 2px solid;
+    background-position: center;
+    transition: background 0.8s;
+ }
+ .square {
+    height: 8.25vh;
+    width: 100vw;
+    background-color: #FFEBCD;
+    z-index: 2;
     position: fixed;
- }
- 
- .button1:active {
-     outline-color: red;
-     background-color: black;
-     color:white;
- }
- .button2:active {
-     outline-color: red;
-     background-color: black;
-     color:white;
- }
- .button3:active {
-     outline-color: red;
-     background-color: black;
-     color:white;
+    bottom: 0;
+    left: 0;
  }
  .fa.menu_icon {   
      font-size: 4rem!important;

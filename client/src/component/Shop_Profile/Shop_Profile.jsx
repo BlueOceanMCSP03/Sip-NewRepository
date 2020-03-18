@@ -1,7 +1,7 @@
 import React from 'react';
 import style from './Shop_Profile.module.css';
 import Bar from '../Navigation/Bar';
-import shops from './shop';
+import shops from './Shops.js';
 
 
 const Shop_Profile = () => (
@@ -38,5 +38,4 @@ const Shop_Profile = () => (
         <Bar />
     </div>
 );
-
 export default Shop_Profile;

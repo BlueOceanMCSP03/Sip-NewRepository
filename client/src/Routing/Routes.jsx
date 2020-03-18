@@ -12,7 +12,7 @@ export default class Routes extends Component {
     constructor(props) {
         super(props)
     }
-
+    
     render() {
         return (
             <Router history={history}>
