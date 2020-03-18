@@ -2,3 +2,32 @@
     font-family: Arial;
     font-size: medium;
   } */
+/* .shopResults {
+  position: absolute;
+  /* top: 50%; */
+  /* margin-bottom: 30px;
+} */ 
+
+.shopResult1 {
+  position: absolute;
+  bottom: 28%;
+  width: 95%;
+  background-color: #C5B29C;
+  border: 2px solid black;
+}
+
+.shopResult2 {
+  position: absolute;
+  bottom: 18%;
+  width: 95%;
+  background-color: #C5B29C;
+  border: 2px solid black;
+}
+
+.shopResult3 {
+  position: absolute;
+  bottom: 8%;
+  width: 95%;
+  background-color: #C5B29C;
+  border: 2px solid black;
+}
