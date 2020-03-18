@@ -5,6 +5,7 @@ import Drink_Search from "../component/Drink_Search/Drink_Search";
 import Login from "../component/Login/Login";
 import history from './history';
 import User from "../component/Profile/User";
+import Shop_Profile from "../component/Shop_Profile/Shop_Profile";
 
 export default class Routes extends Component {
 
@@ -20,6 +21,7 @@ export default class Routes extends Component {
                     <Route path="/Profile" component={User} />
                     <Route path="/Review" component={Drink_Review} />
                     <Route path="/Nearby" component={Drink_Search} />
+                    <Route path="/Shop" component={Shop_Profile} />
                 </Switch>
             </Router>
         )
