@@ -1,4 +1,18 @@
-/* .text {
-    font-size: medium;
+.userReview {
     font-family: Arial;
-} */
+    font-weight: normal;
+    text-align: center;
+    
+}
+
+.text {
+    font-size: 65px;
+    font-family: Arial;
+    font-weight: normal;
+    color: #663300;
+    position: fixed;
+    font-style: italic;
+
+}
+
+
