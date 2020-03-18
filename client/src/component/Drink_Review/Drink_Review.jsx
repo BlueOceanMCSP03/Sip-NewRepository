@@ -24,6 +24,7 @@ export default class Drink_Review extends Component {
     this.ecuserComment = this.ecuserComment.bind(this);
     this.ecfavoriteDrink = this.ecfavoriteDrink.bind(this);
     this.submitAll = this.submitAll.bind(this);
+    this.onStarClickCustomIcon = this.onStarClickCustomIcon.bind(this);
 
   }
 
@@ -123,7 +124,7 @@ export default class Drink_Review extends Component {
   onStarClickCustomIcon(nextValue, prevValue, name) {
     console.log('name: %s, nextValue: %s, prevValue: %s', name, nextValue, prevValue)
     this.setState({
-      rating_custom_icon: nextValue
+      rating: nextValue
     })
   }
 
