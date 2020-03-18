@@ -3,6 +3,7 @@ import style from './Drink_Review.test';
 import StarRatingComponent from 'react-star-rating-component';
 // import $ from 'jquery';
 const axios = require('axios');
+import FormData from 'form-data';
 import Bar from '../Navigation/Bar';
 
 export default class Drink_Review extends Component {
@@ -13,18 +14,27 @@ export default class Drink_Review extends Component {
       drinkName: '',
       file: null,
       rating: 0,
+      comment: '',
+      favoriteDrink: false
     }
     this.echandleLocation = this.echandleLocation.bind(this);
     this.echandleDrink = this.echandleDrink.bind(this);
     this.ecuploadImage = this.ecuploadImage.bind(this);
+    this.onChange = this.onChange.bind(this);
+    this.ecuserComment = this.ecuserComment.bind(this);
+    this.ecfavoriteDrink = this.ecfavoriteDrink.bind(this);
+    this.submitAll = this.submitAll.bind(this);
 
   }
+
+  
+
   echandleLocation(event) {
     //this is setting the state.location to a string to be sent to the database.
     this.setState({
       location: event.target.value
     })
-    console.log(this.state.location)
+    // console.log(this.state.location)
   }
 
   echandleDrink(event) {
@@ -32,104 +42,90 @@ export default class Drink_Review extends Component {
     this.setState({
       drinkName: event.target.value
     })
+    // console.log(this.state.drinkName)
   }
-
-  // sendFile(fileData) {
-  //   var form
-  // }
-
-  // processFile(dataURL, fileType) {
-  //   var maxWidth = 800;
-  //   varmaxHeight = 800;
-
-  //   var image = new Image();
-  //   image.src = dataURL;
-
-  //   image.onload = () => {
-  //     var width = image.width;
-  //     var height = image.height;
-  //     var shouldResize = (width > maxWidth) || (height > maxHeight);
-
-  //     if(!shouldResize) {
-  //       sendFile(dataURL);
-  //       return;
-  //     }
-
-  //     var newWidth;
-  //     var newHeight;
-
-  //     if(width > height) {
-  //       newHeight = height * (maxwidth / width);
-  //       newWidth = maxWidth;
-  //     } else {
-  //       newWidth = width * (maxHeight / height);
-  //       newHeight = maxHeight;
-  //     }
-
-  //     var canvas = document.getElementById('imageUpload');
-
-  //     canvas.width = newWidth;
-  //     canvas.height = newHeight;
-
-  //     var context = canvas.getContext('2d');
-
-  //     context.drawImage(this, 0, 0, newWidth, newHeight);
-
-  //     dataURL = canvas.toDataURL(fileType);
-
-  //     sendFile(dataURL);
-  //   };
-  //   image.onerror = () => {
-  //     alert('There was an error processing your file');
-  //   };
-  // }
-
-  // readFile(file) {
-  //   var reader = new FileReader();
-  //   reader.onloadend = () => {
-  //     processFile(reader.result, file.type)
-  //   }
-  //   reader.onerror = () => {
-  //     alert('There was an error reading the file!');
-  //   }
-  //   reader.readAsDataURL(file)
-  // }
-
-  // ecimageUpload() {
-  //   // if (navigator.userAgent.match(/(Android (1.0|1.1|1.5|1.6|2.0|2.1))|(Windows Phone (OS 7|8.0))|(XBLWP)|(ZuneWP)|(w(eb)?OSBrowser)|(webOS)|(Kindle\/(1.0|2.0|2.5|3.0))/)) {
-  //   //   return false;
-  //   // }
-  //   if(window.File && window.FileReader && widow.FormData) {
-  //     var $inputfield = $('#file');
-  //     $inputfield.on('change', function(e) {
-  //       var file = e.target.files[0];
-
-  //       if(file) {
-  //         if(/^image\//i.test(file.type)) {
-  //           readFile(file);
-  //         } else {
-  //           alert('Not a valid image!');
-  //         }
-  //       }
-  //     });
-  //   } else {
-  //     alert('File upload is not supported');
-  //   }
-    
-  // }
 
   ecuploadImage(eve) {
     eve.preventDefault();
-    const formData = new FormData();
+    let formData = new FormData();
     formData.append('myImage', this.state.file);
-    const config = {
-      headers: {
-        'content-type': 'multipart/form-data'
-      }
-    };
-    // axios.post("/upload")
   }
-  
+
+  onChange(e) {
+    this.setState({file: e.target.files[0]})
+    console.log(this.state.file)
+  }
+
+
+  ecuserComment(event) {
+    this.setState({
+      comment: event.target.value
+    })
+    // console.log(this.state.comment)
+  }
+
+  ecfavoriteDrink() {
+    if(this.state.favoriteDrink === false) {
+      this.setState({favoriteDrink: true})
+    } else if(this.state.favoriteDrink) {
+      this.setState({favoriteDrink: false})
+    }
+    console.log(this.state.favoriteDrink)
+  }
+
+  submitAll() {
+  let formdata = new FormData();
+  let userInfo = formdata.append('myImage', this.state.file);
+
+  //   axios.post('/addDrinkReview', {
+  //     location: this.state.location,
+  //     drinkName: this.state.drinkName,
+  //     file: this.state.file,
+  //     rating: this.state.rating,
+  //     comment: this.state.comment,
+  //     favoriteDrink: this.state.favoriteDrink
+  //   }, config)
+  //     .then((response) => {
+  //       console.log(response.data)
+  //     })
+  //     .catch((error) => {
+  //       alert(`my guy there is ${error}`)
+  //     })
+
+      this.setState({
+        file: userInfo
+      })
+
+      axios({
+        method: 'post',
+        url: '/addDrinkReview',
+        data: {
+          location: this.state.location,
+          drinkName: this.state.drinkName,
+          file: this.state.file,
+          rating: this.state.rating,
+          comment: this.state.comment,
+          favoriteDrink: this.state.favoriteDrink
+        },
+        headers: {
+          'content-type': 'mulipart/form-data'
+        }
+      })
+        .then((response) => {
+          alert(response)
+        })
+        .catch((error) => {
+          alert(error)
+        })
+        
+  }
+
+  onStarClickCustomIcon(nextValue, prevValue, name) {
+    console.log('name: %s, nextValue: %s, prevValue: %s', name, nextValue, prevValue)
+    this.setState({
+      rating_custom_icon: nextValue
+    })
+  }
 
   render() {
 
@@ -137,37 +133,41 @@ export default class Drink_Review extends Component {
 
         <div>
           <div className={style.userReview}>
-            <div className={style.location}>
-              <h1 className={style.text}>Location</h1>
-              <input type='text' maxLength='255' onChange={this.echandleLocation}></input>
-            </div>
+              <div className={style.location}>
+                <h1 className={style.text}>Location</h1>
+                <input type='text' maxLength='255' onChange={this.echandleLocation}></input>
+              </div>
 
-            <div className='drink'>
-              <h1 className={style.text}>Drink</h1>
-              <input type='text' maxLength='255' onChange={this.echandleDrink}></input>
-            </div>
+              <div className='drink'>
+                <h1 className={style.text}>Drink</h1>
+                <input type='text' maxLength='255' onChange={this.echandleDrink}></input>
+              </div>
 
-            <div className='uploadImage'>
-              <div className='uploadimagebar'>
-                <form onSubmit={this.ecuploadImage}>  
-                  <h1 className={style.text}>uploadImage</h1>
-                  <input type='file' name="myImage" onChange={this.onChange} />
-                  <button type='submit' className={style.text}>Upload</button>
+              <div className='uploadImage'>
+                <form>
+                <div className='uploadimagebar'>
+                  <h1 className={style.text} >uploadImage</h1>
+                  <input type='file' name="myImage" onChange={this.onChange}/>
+                </div>
                 </form>
               </div>
-            </div>
 
             <div className='rating/comment'>
               <h1 className={style.text}>Rating:</h1>
-              <StarRatingComponent />
+                <StarRatingComponent 
+                name='ratingComp' 
+                starCount={5} 
+                value={this.state.rating_custom_icon} 
+                onStarClick={this.onStarClickCustomIcon.bind(this)} 
+                />
               <h1 className={style.text}>Comment:</h1>
-              <input type="text"></input>
-              <br></br>
-              <a>
-                <input type='checkbox'></input><h1 className={style.text}>Mark as favorite drink</h1>
-              </a>
-              <button /*onClick={}*/ className={style.text}>Submit</button>
-            </div>
+              <input type="text" onChange={this.ecuserComment}></input>
+                <br></br>
+                <a>
+                  <input onClick={this.ecfavoriteDrink} type='checkbox'></input><h1 className={style.text}>Mark as favorite drink</h1>
+                </a>
+                <button type='submit' className={style.text} onClick={this.submitAll} >Submit</button>
+              </div>
           </div>
           <Bar />
         </div>
