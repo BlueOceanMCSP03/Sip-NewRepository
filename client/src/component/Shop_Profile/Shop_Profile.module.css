@@ -1,0 +1,88 @@
+.mainContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: .35fr .65fr;
+    grid-template-areas:
+                        'store'
+                        'store_comments' 
+    ;
+    height: 100%;
+    gap: 3em;
+    padding: 0.5em;
+}
+
+.storeContainer {
+    grid-area: store;
+}
+
+.reviewContainer {
+    grid-area: store_comments;
+    min-height: 20em;
+}
+.storeInfoContainer {
+    display: grid;
+    grid-template-columns: 0.4fr 0.6fr;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+    'img info' 
+    ;
+    min-height: 10em;
+}
+.img {
+    grid-area: img;
+    height: 100%;
+    width: 100%;
+    border-radius: 2em;
+    object-fit: scale-down;
+}
+
+.storeInfo {
+    grid-area: info;
+    margin-left: 10px;
+    margin-top: 1.5em;
+}
+
+.storeInfo p {
+    text-align: center;
+    font-family: cursive;
+    font-size: 16px;
+    line-height: 10px;
+}
+
+.reviews { 
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: large;
+    font-weight: bold;
+    margin-bottom: 5em;
+}
+
+.reviewItems {
+    display: grid;
+    grid-template-columns: 0.4fr 0.6fr;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+                        'review_img review_content' 
+    ;
+}
+
+.revImg {
+    grid-area: review_img;
+    height: 75%;
+    width: 100%;
+    object-fit: scale-down;
+    border-radius: 2em;
+}
+
+.revContentContainer {
+    grid-area: review_content;
+    margin-left: 10px;
+}
+
+.revContentContainer p {
+    margin: 0;
+}
+
+.comment {
+    font-size: small;
+}
