@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const app = express();
 const port = 3000;
+const cors = require('cors')
 const con = require('../database/index.js');
 require('dotenv').config();
 
@@ -25,7 +26,7 @@ app.route('/login')
     })
 
 app.post('/addDrinkReview', (req, res) => {
-    //Add drink review to DB
+    //Add drink review to DBz
     con.query()
 })
 
