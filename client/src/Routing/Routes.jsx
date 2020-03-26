@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Router, Switch, Route } from "react-router-dom";
+import { Router, Switch, Route } from 'react-router';
 import Drink_Review from "../component/Drink_Review/Drink_Review";
 import Drink_Search from "../component/Drink_Search/Drink_Search";
 import Login from "../component/Login/Login";

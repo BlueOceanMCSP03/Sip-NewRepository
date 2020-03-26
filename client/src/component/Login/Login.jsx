@@ -12,19 +12,28 @@ const Login = (props) => (
             <span>
             <label>Username:</label>
             <br></br>
-            <input type='text'></input>
+            <input 
+              type='text'
+              onChange={props.onUsernameInput}
+            ></input>
             </span>
             <br></br>
             <span>
                 <br></br>
                 <label>Password:</label>
                 <br></br>
-                <input type='text'></input>
+                <input 
+                  type='text'
+                  onChange={props.onPasswordInput}
+                ></input>
             </span>
         </form>
         <br></br>
         <div className={style.buttonAlign}>
-        <button className={style.button} onClick={props.handleClick}>Login</button>
+        <button 
+          className={style.button} 
+          onClick={props.loginUser}
+        >Login</button>
         </div> 
         </div>  
     </div>

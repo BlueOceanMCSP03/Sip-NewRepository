@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 const path = require('path');
-const DB = require('../database/index.js');
+const { loginUser, addUser, retrieveDrinks } = require('../database/query');
 const port = 3000;
 require('dotenv').config();
 
@@ -16,22 +16,44 @@ app.get('/', (req, res) => {
 });
 
 app.route('/login')
-    .get((req, res) => {
+    .get(async (req, res) => {
         //login existing user
-        const {username, password} = req.query;
-        DB.query()
-        res.send('Test2')
+        let result = [];
+        try {
+            const userInfo = await loginUser(req.query);
+            result = [...result, userInfo];
+            const drinkInfo = await retrieveDrinks(req.query.username);
+            result = [...result, drinkInfo];
+            res.json(result);
+        }
+        catch (err) {
+            res.sendStatus(500);
+        }
     })
 
     .post((req, res) => {
         //Add new user
-        
+        // We need username, pw, location, userimage.
+        addUser(req.query)
+            .then((data) => {
+                console.log(data);
+            })
+            .catch((err) => {
+                res.sendStatus(500);
+            })
     })
 
-
+// ADD DRINK REVIEWS TO DB
 app.post('/addDrinkReview', (req, res) => {
+    console.log(req.query);
     //Add drink review to DB
-    con.query()
+    addDrinkReview()
+        .then((data) => {
+            console.log(data);
+        })
+        .catch((err) => {
+            res.sendStatus(500);
+        })
 })
 
 app.get('/storeReviews', (req, res) => {
