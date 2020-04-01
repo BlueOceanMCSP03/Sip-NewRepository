@@ -19,7 +19,7 @@ const Login = (props) => (
                 <br></br>
                 <label>Password:</label>
                 <br></br>
-                <input type='text'></input>
+                <input type='password'></input>
             </span>
         </form>
         <br></br>

@@ -7,8 +7,12 @@
   /* top: 50%; */
   /* margin-bottom: 30px;
 } */ 
+.shopResult {
+  border: 1px solid black;
+  background-color: #C5B29C;
+}
 
-.shopResult1 {
+/* .shopResult1 {
   position: absolute;
   bottom: 28%;
   width: 95%;
@@ -30,4 +34,4 @@
   width: 95%;
   background-color: #C5B29C;
   border: 2px solid black;
-}
+} */

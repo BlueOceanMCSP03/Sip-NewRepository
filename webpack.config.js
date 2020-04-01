@@ -38,4 +38,7 @@ module.exports = {
     devServer: {
         contentBase: './client/public',
     },
+    node: {
+        fs: 'empty'
+      }
 };
